@@ -3,8 +3,13 @@ import java.text.*;
 import java.util.*;
 public class StudentList {
 	public static void main(String[] args) {
-
-//		Check arguments
+        if(args.length!=1)
+		{
+			System.err.println("Invalid number of arguments");
+			System.err.println("Exiting program");
+			System.exit(1);
+		}
+        
 		if(args[0].equals("a")) {
 			System.out.println("Loading data ...");			
 			try {
@@ -83,7 +88,8 @@ public class StudentList {
 				if(c ==' ') 
 				{
 					if (!in_word) {	
-						count++; in_word =true;
+						count++; 
+						in_word =true;
 							}
 					else {
 						 in_word=false;
@@ -93,6 +99,11 @@ public class StudentList {
 			System.out.println(count +" word(s) found ");
 			} catch (Exception e){} 
 			System.out.println("Data Loaded.");				
+		}
+		else{
+			System.out.println("Invalid Arguments");
+			System.out.println("Exiting program");
+			System.exit(2);
 		}
 	}
 }
